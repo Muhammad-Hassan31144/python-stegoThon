@@ -23,7 +23,10 @@ def register_routes(app):
             print("Received password:", password)
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                folder_path = app.config['UPLOAD_FOLDER']
+                if not os.path.exists(folder_path):
+                    os.makedirs(folder_path)
+                filepath = os.path.join(folder_path, filename)
                 file.save(filepath)
                 print("File saved at:", filepath)
                 try:
