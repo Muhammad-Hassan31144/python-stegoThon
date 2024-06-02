@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decode Message</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .flash {
+            color: white;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .flash-success {
+            background-color: green;
+        }
+        .flash-danger {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Decode a Message from an Image</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="image">Choose an image:</label>
+        <input type="file" name="image" id="image" required><br><br>
+        <label for="password">Enter the password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+        <input type="submit" value="Decode">
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for category, message in messages %}
+                <li class="flash flash-{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% if message %}
+        <h2>Decoded Message:</h2>
+        <p>{{ message }}</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

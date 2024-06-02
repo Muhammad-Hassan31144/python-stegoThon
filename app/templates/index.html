@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Steganography Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Steganography Tool</h1>
+    <a href="{{ url_for('encode') }}">Encode a Message</a>
+    <a href="{{ url_for('decode') }}">Decode a Message</a>
+</body>
+</html>

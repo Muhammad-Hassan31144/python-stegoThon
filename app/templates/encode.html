@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encode Message</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Encode a Message into an Image</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="image">Choose an image:</label>
+        <input type="file" name="image" id="image" required><br><br>
+        <label for="message">Enter the message:</label>
+        <textarea name="message" id="message" required></textarea><br><br>
+        <label for="password">Enter the password:</label>
+        <input type="password" name="password" id="password" required><br><br>
+        <input type="submit" value="Encode">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
