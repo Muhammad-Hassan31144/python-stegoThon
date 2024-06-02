@@ -50,7 +50,7 @@ Decode a message:
 4. View the decoded message.
 
 ## Project Structure
-my_flask_app/
+```my_flask_app/
 ├── app/
 │   ├── __init__.py
 │   ├── routes.py
@@ -67,3 +67,4 @@ my_flask_app/
 ├── config.py
 ├── requirements.txt
 └── run.py
+```
